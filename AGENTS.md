@@ -14,7 +14,7 @@ The library covers: drafts CRUD, publish/schedule/unpublish, sections, markdown-
 - **Runtime:** Node.js 22+
 - **HTTP:** Native fetch (async/await)
 - **Testing:** Vitest
-- **Build:** tsup
+- **Build:** tsdown
 - **Lint/Format:** Biome
 - **Package:** `@zweer/substack-client` (npm)
 

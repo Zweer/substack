@@ -2,19 +2,19 @@
 
 ## Build System
 
-### tsup
-- **tsup** for building the library
-- Outputs: ESM (`.mjs`) + CJS (`.cjs`) + type declarations (`.d.ts`)
+### tsdown
+- **tsdown** for building the library (Rolldown-based successor to tsup)
+- Outputs: ESM (`.mjs`) + CJS (`.cjs`) + type declarations (`.d.mts`, `.d.cts`)
 - Source maps enabled
-- Configuration: `tsup.config.ts`
+- Configuration: `tsdown.config.ts`
 
 ### TypeScript
 - `tsc` only for type-checking (`tsc --noEmit`)
-- Never use `tsc` for building — always tsup
+- Never use `tsc` for building — always tsdown
 
 ### Build Commands
 ```bash
-npm run build              # Build with tsup
+npm run build              # Build with tsdown
 npm run clean              # Remove dist/
 npm run typecheck          # Type-check only (tsc --noEmit)
 ```
@@ -45,7 +45,7 @@ npm run format             # Biome format
 
 | Script | Description |
 |--------|-------------|
-| `npm run build` | Build with tsup |
+| `npm run build` | Build with tsdown |
 | `npm run clean` | Remove dist/ |
 | `npm run lint` | Biome check |
 | `npm run lint:fix` | Biome check + fix |

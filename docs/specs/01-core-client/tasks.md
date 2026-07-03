@@ -17,20 +17,20 @@ T1 (Project Setup) → T2 (Types) → T3 (Errors) → T4 (HttpClient)
                                                  T9 (Integration Tests)
 ```
 
-## T1 — Project Setup ⬜
+## T1 — Project Setup ✅
 
 Create the foundational project scaffolding.
 
-- [ ] `package.json` — name: `@zweer/substack-client`, type: module, engines: node >=22
-- [ ] `tsconfig.json` — strict, ESM, target ES2022, declaration
-- [ ] `tsup.config.ts` — dual CJS/ESM, dts, two entry points (index + transform)
-- [ ] `biome.json` — single quotes, 100 width, tabs, import sorting
-- [ ] `vitest.config.ts` — v8 coverage, include lib/
-- [ ] `.gitignore` — dist/, node_modules/, coverage/
-- [ ] Create `lib/` and `test/` directories with placeholder files
-- [ ] Verify: `npm run build` and `npm test` both pass (empty)
+- [x] `package.json` — name: `@zweer/substack-client`, type: module, engines: node >=22
+- [x] `tsconfig.json` — strict, ESM, target ES2022, declaration
+- [x] `tsdown.config.ts` — dual CJS/ESM, dts, two entry points (index + transform)
+- [x] `biome.json` — single quotes, 100 width, tabs, import sorting
+- [x] `vitest.config.ts` — v8 coverage, include lib/
+- [x] `.gitignore` — dist/, node_modules/, coverage/
+- [x] Create `lib/` and `test/` directories with placeholder files
+- [x] Verify: `npm run build` and `npm test` both pass (empty)
 
-**Acceptance:** `npm run build`, `npm run lint`, `npm test` all exit 0.
+**Acceptance:** `npm run build`, `npm run lint`, `npm test` all exit 0. ✅
 
 ## T2 — Type Definitions ⬜
 

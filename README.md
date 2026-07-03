@@ -133,7 +133,7 @@ This library handles these known issues internally:
 - **HTTP:** Native fetch
 - **Markdown parsing:** marked or remark
 - **Testing:** Vitest
-- **Build:** tsup
+- **Build:** tsdown
 - **Package:** `@zweer/substack-client` (NPM)
 
 ## Project Structure
@@ -162,7 +162,7 @@ substack-client/
 ├── AGENTS.md               # Universal AI agent steering
 ├── package.json
 ├── tsconfig.json
-├── tsup.config.ts
+├── tsdown.config.ts
 ├── biome.json
 └── vitest.config.ts
 ```

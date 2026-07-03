@@ -1,0 +1,10 @@
+{
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "noEmit": true,
+    "outDir": "dist"
+  },
+  "include": ["lib/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
