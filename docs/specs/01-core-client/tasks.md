@@ -32,34 +32,34 @@ Create the foundational project scaffolding.
 
 **Acceptance:** `npm run build`, `npm run lint`, `npm test` all exit 0. ✅
 
-## T2 — Type Definitions ⬜
+## T2 — Type Definitions ✅
 
 Define all public types for the client API surface.
 
-- [ ] `lib/types.ts` — All interfaces and type aliases:
+- [x] `lib/types.ts` — All interfaces and type aliases:
   - `SubstackClientOptions`
   - `CreateDraftInput`, `UpdateDraftInput`
   - `Draft`, `Audience`
   - `PublishInput`, `ScheduleInput`
   - `Section`, `CreateSectionInput`
-- [ ] Export all types from `lib/index.ts`
-- [ ] Verify: `npm run typecheck` passes
+- [x] Export all types from `lib/index.ts`
+- [x] Verify: `npm run typecheck` passes
 
-**Acceptance:** Types compile cleanly, are exported, and match the design.md interfaces.
+**Acceptance:** Types compile cleanly, are exported, and match the design.md interfaces. ✅
 
-## T3 — Error Classes ⬜
+## T3 — Error Classes ✅
 
 Implement typed error hierarchy.
 
-- [ ] `lib/errors.ts`:
+- [x] `lib/errors.ts`:
   - `SubstackError` (base, with statusCode + endpoint + responseBody)
   - `SubstackAuthError` (401/403)
   - `SubstackRateLimitError` (429, with optional retryAfter)
   - `SubstackNotFoundError` (404)
-- [ ] Export from `lib/index.ts`
-- [ ] Unit tests: error construction, instanceof checks, message formatting
+- [x] Export from `lib/index.ts`
+- [x] Unit tests: error construction, instanceof checks, message formatting
 
-**Acceptance:** Each error class carries statusCode, endpoint, name. Tests pass.
+**Acceptance:** Each error class carries statusCode, endpoint, name. Tests pass. ✅
 
 ## T4 — HttpClient ⬜
 

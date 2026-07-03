@@ -4,9 +4,9 @@
 
 | # | Test | Story | Status |
 |---|------|-------|--------|
-| U1 | SubstackError carries statusCode, endpoint, name | US-4 | ⬜ |
-| U2 | SubstackAuthError has statusCode 401 and correct name | US-4 | ⬜ |
-| U3 | SubstackRateLimitError carries retryAfter value | US-5 | ⬜ |
+| U1 | SubstackError carries statusCode, endpoint, name | US-4 | ✅ |
+| U2 | SubstackAuthError has statusCode 401 and correct name | US-4 | ✅ |
+| U3 | SubstackRateLimitError carries retryAfter value | US-5 | ✅ |
 | U4 | HttpClient resolves base URL from bare domain | — | ⬜ |
 | U5 | HttpClient resolves base URL from full https:// URL | — | ⬜ |
 | U6 | HttpClient injects substack.sid cookie in all requests | US-4 | ⬜ |
