@@ -7,20 +7,20 @@
 | U1 | SubstackError carries statusCode, endpoint, name | US-4 | ✅ |
 | U2 | SubstackAuthError has statusCode 401 and correct name | US-4 | ✅ |
 | U3 | SubstackRateLimitError carries retryAfter value | US-5 | ✅ |
-| U4 | HttpClient resolves base URL from bare domain | — | ⬜ |
-| U5 | HttpClient resolves base URL from full https:// URL | — | ⬜ |
-| U6 | HttpClient injects substack.sid cookie in all requests | US-4 | ⬜ |
-| U7 | HttpClient injects connect.sid when provided | US-4 | ⬜ |
-| U8 | HttpClient throws SubstackAuthError on 401 | US-4 | ⬜ |
-| U9 | HttpClient throws SubstackAuthError on 403 | US-4 | ⬜ |
-| U10 | HttpClient throws SubstackNotFoundError on 404 | — | ⬜ |
-| U11 | HttpClient throws SubstackRateLimitError on 429 | US-5 | ⬜ |
-| U12 | HttpClient retries on 503, succeeds on second attempt | US-5 | ⬜ |
-| U13 | HttpClient retries with exponential backoff timing | US-5 | ⬜ |
-| U14 | HttpClient gives up after maxRetries attempts | US-5 | ⬜ |
-| U15 | HttpClient does NOT retry on 400 | US-5 | ⬜ |
-| U16 | HttpClient respects Retry-After header on 429 | US-5 | ⬜ |
-| U17 | HttpClient throws on timeout (AbortController) | US-5 | ⬜ |
+| U4 | HttpClient resolves base URL from bare domain | — | ✅ |
+| U5 | HttpClient resolves base URL from full https:// URL | — | ✅ |
+| U6 | HttpClient injects substack.sid cookie in all requests | US-4 | ✅ |
+| U7 | HttpClient injects connect.sid when provided | US-4 | ✅ |
+| U8 | HttpClient throws SubstackAuthError on 401 | US-4 | ✅ |
+| U9 | HttpClient throws SubstackAuthError on 403 | US-4 | ✅ |
+| U10 | HttpClient throws SubstackNotFoundError on 404 | — | ✅ |
+| U11 | HttpClient throws SubstackRateLimitError on 429 | US-5 | ✅ |
+| U12 | HttpClient retries on 503, succeeds on second attempt | US-5 | ✅ |
+| U13 | HttpClient retries with exponential backoff timing | US-5 | ✅ |
+| U14 | HttpClient gives up after maxRetries attempts | US-5 | ✅ |
+| U15 | HttpClient does NOT retry on 400 | US-5 | ✅ |
+| U16 | HttpClient respects Retry-After header on 429 | US-5 | ✅ |
+| U17 | HttpClient throws on timeout (AbortController) | US-5 | ✅ |
 | U18 | createDraft sends correct POST payload | US-1 | ⬜ |
 | U19 | createDraft returns mapped Draft object | US-1 | ⬜ |
 | U20 | updateDraft sends body + bylines in PUT payload | US-1 | ⬜ |

@@ -61,31 +61,31 @@ Implement typed error hierarchy.
 
 **Acceptance:** Each error class carries statusCode, endpoint, name. Tests pass. ✅
 
-## T4 — HttpClient ⬜
+## T4 — HttpClient ✅
 
 Internal fetch wrapper with auth, retry, and rate limiting.
 
-- [ ] `lib/http.ts` — `HttpClient` class:
+- [x] `lib/http.ts` — `HttpClient` class:
   - Constructor: accepts `SubstackClientOptions`, resolves base URL
   - Methods: `get(path, params?)`, `post(path, body?)`, `put(path, body?)`, `delete(path)`
   - Cookie injection (`substack.sid`, optionally `connect.sid`)
   - User-Agent header
   - JSON parsing with error handling
   - Timeout via `AbortController`
-- [ ] Retry logic:
+- [x] Retry logic:
   - Retryable: 408, 429, 500, 502, 503, 504
   - Non-retryable: 400, 401, 403, 404, 422
   - Exponential backoff with jitter (1s base, 2x, max 30s)
   - Configurable max attempts (default 3)
   - 429: respect `Retry-After` header
-- [ ] Error mapping:
+- [x] Error mapping:
   - 401/403 → `SubstackAuthError`
   - 404 → `SubstackNotFoundError`
   - 429 → `SubstackRateLimitError`
   - Other 4xx/5xx → `SubstackError`
-- [ ] Unit tests with msw mocking all error scenarios + retry behavior
+- [x] Unit tests with msw mocking all error scenarios + retry behavior
 
-**Acceptance:** HttpClient retries correctly, throws typed errors, respects timeouts. Full test coverage on error paths.
+**Acceptance:** HttpClient retries correctly, throws typed errors, respects timeouts. Full test coverage on error paths. ✅
 
 ## T5 — Draft Operations ⬜
 
