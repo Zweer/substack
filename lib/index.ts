@@ -1,3 +1,4 @@
+export { SubstackClient } from './client.js';
 export {
   SubstackAuthError,
   SubstackError,

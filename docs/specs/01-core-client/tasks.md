@@ -87,75 +87,75 @@ Internal fetch wrapper with auth, retry, and rate limiting.
 
 **Acceptance:** HttpClient retries correctly, throws typed errors, respects timeouts. Full test coverage on error paths. ✅
 
-## T5 — Draft Operations ⬜
+## T5 — Draft Operations ✅
 
 Implement draft CRUD against Substack API.
 
-- [ ] `lib/drafts.ts` — functions or class:
+- [x] `lib/drafts.ts` — functions or class:
   - `createDraft(http, input)` → POST /api/v1/drafts
   - `updateDraft(http, id, input)` → PUT /api/v1/drafts/{id}
     - Handle byline injection (fetch draft first to get bylines if needed)
   - `getDraft(http, id)` → GET /api/v1/drafts/{id}
   - `listDrafts(http, opts?)` → GET /api/v1/drafts (with offset/limit)
   - `deleteDraft(http, id)` → DELETE /api/v1/drafts/{id}
-- [ ] Map Substack's snake_case response → our camelCase `Draft` type
-- [ ] Handle the `draft_bylines` quirk in update
-- [ ] Unit tests with msw for each operation (happy path + error)
+- [x] Map Substack's snake_case response → our camelCase `Draft` type
+- [x] Handle the `draft_bylines` quirk in update
+- [x] Unit tests with msw for each operation (happy path + error)
 
-**Acceptance:** All 5 CRUD operations work against mocked API. Response mapping is correct.
+**Acceptance:** All 5 CRUD operations work against mocked API. Response mapping is correct. ✅
 
-## T6 — Publish Operations ⬜
+## T6 — Publish Operations ✅
 
 Implement publish, schedule, unpublish.
 
-- [ ] `lib/publish.ts`:
+- [x] `lib/publish.ts`:
   - `publish(http, id, input?)` → POST /api/v1/drafts/{id}/publish
   - `schedule(http, id, input)` → POST /api/v1/drafts/{id}/publish (with post_date)
-  - `unpublish(http, id)` → TBD endpoint (investigate during implementation)
-- [ ] Handle the publish payload quirks (may need to include draft title/body)
-- [ ] Unit tests for each operation
+  - `unpublish(http, id)` → POST /api/v1/drafts/{id}/unpublish
+- [x] Handle the publish payload quirks (may need to include draft title/body)
+- [x] Unit tests for each operation
 
-**Acceptance:** Publish and schedule work against mocked API. Unpublish endpoint confirmed or documented as blocked.
+**Acceptance:** Publish and schedule work against mocked API. Unpublish endpoint confirmed or documented as blocked. ✅
 
-## T7 — Section Operations ⬜
+## T7 — Section Operations ✅
 
 Implement section CRUD.
 
-- [ ] `lib/sections.ts`:
+- [x] `lib/sections.ts`:
   - `listSections(http)` → GET /api/v1/sections
   - `createSection(http, input)` → POST /api/v1/sections
   - `deleteSection(http, id)` → DELETE /api/v1/sections/{id}
-- [ ] Map response to `Section` type
-- [ ] Unit tests
+- [x] Map response to `Section` type
+- [x] Unit tests
 
-**Acceptance:** Section CRUD works against mocked API. Section ID usable in `updateDraft`.
+**Acceptance:** Section CRUD works against mocked API. Section ID usable in `updateDraft`. ✅
 
-## T8 — SubstackClient Facade ⬜
+## T8 — SubstackClient Facade ✅
 
 Wire everything together in the public API.
 
-- [ ] `lib/client.ts` — `SubstackClient` class:
+- [x] `lib/client.ts` — `SubstackClient` class:
   - Constructor: creates internal `HttpClient`
   - Expose all methods: `createDraft`, `updateDraft`, `getDraft`, `listDrafts`, `deleteDraft`, `publish`, `schedule`, `unpublish`, `listSections`, `createSection`, `deleteSection`
   - Each method delegates to the respective module function
-- [ ] `lib/index.ts` — Public barrel:
+- [x] `lib/index.ts` — Public barrel:
   - Export `SubstackClient`
   - Export all types
   - Export error classes
-- [ ] Verify the public API matches the README's "Planned API" section
+- [x] Verify the public API matches the README's "Planned API" section
 
-**Acceptance:** A user can `import { SubstackClient } from '@zweer/substack-client'` and access all operations. API matches the documented surface.
+**Acceptance:** A user can `import { SubstackClient } from '@zweer/substack-client'` and access all operations. API matches the documented surface. ✅
 
-## T9 — Integration Tests ⬜
+## T9 — Integration Tests ✅
 
 End-to-end tests with comprehensive msw mocking.
 
-- [ ] Full flow: create draft → update with body → publish
-- [ ] Full flow: create draft → schedule for future
-- [ ] Section flow: list → create → assign to draft → delete
-- [ ] Auth failure: expired cookie → SubstackAuthError
-- [ ] Retry flow: 503 → 503 → 200 (success on third attempt)
-- [ ] Rate limit: 429 with Retry-After → wait → retry → success
-- [ ] Not found: get non-existent draft → SubstackNotFoundError
+- [x] Full flow: create draft → update with body → publish
+- [x] Full flow: create draft → schedule for future
+- [x] Section flow: list → create → assign to draft → delete
+- [x] Auth failure: expired cookie → SubstackAuthError
+- [x] Retry flow: 503 → 503 → 200 (success on third attempt)
+- [x] Rate limit: 429 with Retry-After → wait → retry → success
+- [x] Not found: get non-existent draft → SubstackNotFoundError
 
-**Acceptance:** All integration tests pass. No real HTTP calls made. Covers the 5 user stories from requirements.md.
+**Acceptance:** All integration tests pass. No real HTTP calls made. Covers the 5 user stories from requirements.md. ✅
